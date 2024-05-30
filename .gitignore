@@ -1,0 +1,35 @@
+# React Native (backend)
+backend/node_modules
+backend/dist
+backend/dist-ssr
+backend/*.local
+backend/web-build/
+backend/npm-debug.*
+backend/yarn-debug.*
+backend/yarn-error.*
+backend/.env*.local
+backend/.env
+
+
+
+# ReactJS (frontend)
+frontend/node_modules
+frontend/dist
+frontend/*.local
+frontend/.vscode/*
+frontend/.vscode/extensions.json
+frontend/.idea
+frontend/.DS_Store
+frontend/*.suo
+frontend/*.ntvs*
+frontend/*.njsproj
+frontend/*.sln
+frontend/*.sw?
+frontend/npm-debug.*
+frontend/yarn-debug.*
+frontend/yarn-error.*
+frontend/*.pem
+frontend/.env*.local
+frontend/.env
+frontend/*.tsbuildinfo
+*.apk
