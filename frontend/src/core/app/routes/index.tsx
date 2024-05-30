@@ -20,13 +20,20 @@ const DetailsTeacher = lazy(
 
 // class
 const ClassRoom = lazy(() => import('../../pages/classroom'));
-const CreateClassRoom = lazy(() => import('../../pages/classroom/components/form'));
+const CreateClassRoom = lazy(
+  () => import('../../pages/classroom/components/form'),
+);
 const DetailsClassRoom = lazy(
   () => import('../../pages/classroom/components/details'),
 );
 
 import PageNotFound from '../../pages/404';
 
+/**
+ * Renders the main application component.
+ *
+ * @return {JSX.Element} The main application component.
+ */
 const App = () => {
   return (
     <BrowserRouter>

@@ -16,6 +16,14 @@ import { TeacherRepository } from 'src/teacher/domain/repository/teacher.resposi
 
 @Injectable()
 export class ClassUseCaseService implements IUseCaseClassService {
+  /**
+   * Constructs a new instance of the ClassUseCaseService class.
+   *
+   * @param {IClassRepository} classRepository - The class repository.
+   * @param {IStudentRepository} studentRepository - The student repository.
+   * @param {ITeacherRepository} teacherRepository - The teacher repository.
+   */
+
   constructor(
     @Inject(OrmClassRepository)
     private readonly classRepository: IClassRepository,
@@ -27,6 +35,11 @@ export class ClassUseCaseService implements IUseCaseClassService {
     private readonly teacherRepository: ITeacherRepository,
   ) {}
 
+  /**
+   * Retrieves all classes from the class repository.
+   *
+   * @return {Promise<IClassModel[]>} A promise that resolves to an array of class models.
+   */
   async getAllClasses(): Promise<IClassModel[]> {
     try {
       return await this.classRepository.getAllClasses();
@@ -34,6 +47,13 @@ export class ClassUseCaseService implements IUseCaseClassService {
       throw error;
     }
   }
+
+  /**
+   * Retrieves a class model from the class repository based on the provided ID.
+   *
+   * @param {number} id - The ID of the class to retrieve.
+   * @return {Promise<IClassModel>} A promise that resolves to the class model.
+   */
   async getClass(id: number): Promise<IClassModel> {
     return await this.classRepository.getClass(id);
   }
@@ -52,6 +72,14 @@ export class ClassUseCaseService implements IUseCaseClassService {
       };
     }
   }
+
+  /**
+   * Updates a class with the given ID using the provided CreateClassDto.
+   *
+   * @param {number} id - The ID of the class to update.
+   * @param {CreateClassDto} classrom - The data to update the class with.
+   * @return {Promise<IResponse>} A promise that resolves to an IResponse object with the code and message properties.
+   */
   async updateClass(id: number, classrom: CreateClassDto): Promise<IResponse> {
     try {
       await this.classRepository.updateClass(id, classrom);
@@ -66,6 +94,15 @@ export class ClassUseCaseService implements IUseCaseClassService {
       };
     }
   }
+
+  /**
+   * Deletes a class with the given ID.
+   *
+   * @param {number} id - The ID of the class to delete.
+   * @return {Promise<IResponse>} A promise that resolves to an IResponse object with the code and message properties.
+   *                              If the deletion is successful, the code will be 200 and the message will be 'success'.
+   *                              If there is an error, the code will be 400 and the message will be the error message.
+   */
   async deleteClass(id: number): Promise<IResponse> {
     try {
       await this.classRepository.deleteClass(id);
@@ -81,6 +118,15 @@ export class ClassUseCaseService implements IUseCaseClassService {
     }
   }
 
+  /**
+   * Adds students to a class with the given ID.
+   *
+   * @param {number} id - The ID of the class to add students to.
+   * @param {number[]} studentsId - An array of student IDs to add to the class.
+   * @return {Promise<IResponse>} A promise that resolves to an IResponse object with the code and message properties.
+   *                              If the addition is successful, the code will be 200 and the message will be 'success'.
+   *                              If there is an error, the code will be 400 and the message will be the error message.
+   */
   async addStudents(id: number, studentsId: number[]): Promise<IResponse> {
     try {
       const students = await Promise.all(
@@ -102,6 +148,17 @@ export class ClassUseCaseService implements IUseCaseClassService {
       };
     }
   }
+
+  /**
+   * Adds a teacher to a class with the given ID.
+   *
+   * @param {number} id - The ID of the class to add the teacher to.
+   * @param {number} teacherId - The ID of the teacher to add.
+   * @return {Promise<IResponse>} A promise that resolves to an IResponse object with the code and message properties.
+   *                              If the addition is successful, the code will be 200 and the message will be 'success'.
+   *                              If the teacher is not found, the code will be 400 and the message will be 'teacher not found'.
+   *                              If there is an error, the code will be 400 and the message will be the error message.
+   */
   async addTeacher(id: number, teacherId: number): Promise<IResponse> {
     try {
       console.log(teacherId);

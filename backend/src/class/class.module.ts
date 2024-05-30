@@ -8,6 +8,14 @@ import { OrmClassRepository } from 'src/common/domain/repositories/orm/class/orm
 import { ClassRepository } from './domain/repository/class.respository';
 import { StudentModule } from 'src/student/student.module';
 import { TeacherModule } from 'src/teacher/teacher.module';
+
+/**
+ * The ClassModule class is a NestJS module that defines the configuration for the class module.
+ * It is decorated with the @Module decorator, which indicates that it is a module in the NestJS application.
+ *
+ * The imports array specifies the modules that this module depends on. It includes the TypeOrmModule for the class entity, StudentModule, and TeacherModule.
+ **/
+
 @Module({
   imports: [
     TypeOrmModule.forFeature([ClassEnity]),

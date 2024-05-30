@@ -9,7 +9,11 @@ import { useLocation } from 'react-router-dom';
 import Scrollbar from '@/shared/components/scrollbar';
 
 // ----------------------------------------------------------------------
-
+/**
+ * Renders the navigation component.
+ *
+ * @return {JSX.Element} The rendered navigation component.
+ */
 export default function Nav() {
   const renderMenu = (
     <Stack component='nav' spacing={0.5} sx={{ px: 2 }}>

@@ -5,6 +5,12 @@ import { UpdateClassDto } from '../dto/update-class.dto';
 import { IStudentModel } from 'src/common/domain/interface/student/model/student-model.interface';
 import { ITeacherModel } from 'src/common/domain/interface/teacher/model/teacher-model.interface';
 
+/**
+ * The IClassRepository interface defines the methods that a class repository must implement.
+ *
+ * @interface IClassRepository
+ */
+
 interface IClassGets {
   getAllClasses(): Promise<IClassModel[]>;
   getClass(id: number): Promise<IClassModel>;

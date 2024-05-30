@@ -8,6 +8,8 @@ See **Deployment** to know how to deploy the project.
 
 ### Pre-requirements 📋
 
+nodejs, mysql and docker and dokcer-compose
+
 To use the project it is necessary to install Node and docker.
 
 Please read the documentation to add, remove or update the project, below some of the most used commands

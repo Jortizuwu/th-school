@@ -7,6 +7,11 @@ import { useListClassRooms } from '@/shared/hooks/react-query/classroom';
 import { useListStudents } from '@/shared/hooks/react-query/students';
 import { useListTeachers } from '@/shared/hooks/react-query/teachers';
 
+/**
+ * Renders the main application view.
+ *
+ * @return {JSX.Element} The main application view component.
+ */
 export default function AppView() {
   const { classRooms, isLoading } = useListClassRooms();
   const { students, isLoading: isLoadingStudents } = useListStudents();

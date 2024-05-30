@@ -9,6 +9,14 @@ import { ICreateClassDto } from 'src/common/domain/interface/class/dto/create-cl
 import { IStudentModel } from 'src/common/domain/interface/student/model/student-model.interface';
 import { ITeacherModel } from 'src/common/domain/interface/teacher/model/teacher-model.interface';
 
+/**
+ *  ClassRepository is a class that implements the IClassRepository interface.
+ *
+ * @class ClassRepository
+ * @classdesc ClassRepository is a class that implements the IClassRepository interface.
+ *
+ */
+
 @Injectable()
 export class ClassRepository implements IOrmClassRepository {
   constructor(

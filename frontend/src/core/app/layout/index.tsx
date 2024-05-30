@@ -6,6 +6,12 @@ import Nav from './components/nav';
 
 const SPACING = 8;
 
+/**
+ * Renders the root layout of the application.
+ *
+ * @return {JSX.Element} The root layout component.
+ */
+
 function RootLayout() {
   return (
     <>
